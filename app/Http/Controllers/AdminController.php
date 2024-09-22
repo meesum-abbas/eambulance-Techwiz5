@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
+use App\Models\Feedback;
 use App\Models\User;
 use DB;
 use Illuminate\Http\Request;
@@ -87,4 +89,17 @@ class AdminController extends Controller
         $drivers = User ::where('rolefk', 2)->get();
         return View('AdminPannel.monitoring', compact('drivers'));
     }
+
+    public function showcontact()
+{
+    $contacts = Contact::all();
+    return view('AdminPannel.contactdetails', compact('contacts'));
+}
+
+public function showfeedback()
+{
+    $feedbacks = Feedback::all();
+    return view('AdminPannel.feedbackdetails', compact('feedbacks'));
+}
+
 }

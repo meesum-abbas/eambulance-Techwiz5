@@ -23,18 +23,31 @@ class MessageController extends Controller
         return response()->json($message);
     }
 
+    // public function fetchMessages($receiverId)
+    // {
+    //     $messages = Message::where(function($query) use ($receiverId) {
+    //         $query->where('sender_id', Auth::id())
+    //               ->where('receiver_id', $receiverId);
+    //     })->orWhere(function($query) use ($receiverId) {
+    //         $query->where('sender_id', $receiverId)
+    //               ->where('receiver_id', Auth::id())
+    //               ->orderBy('created_at', 'asc');
+
+    //     })->get();
+
+    //     return response()->json($messages);
+    // }
     public function fetchMessages($receiverId)
-    {
-        $messages = Message::where(function($query) use ($receiverId) {
-            $query->where('sender_id', Auth::id())
-                  ->where('receiver_id', $receiverId);
-        })->orWhere(function($query) use ($receiverId) {
-            $query->where('sender_id', $receiverId)
-                  ->where('receiver_id', Auth::id())
-                  ->orderBy('created_at', 'asc');
+{
+    $messages = Message::where(function($query) use ($receiverId) {
+        $query->where('sender_id', Auth::id())
+              ->where('receiver_id', $receiverId);
+    })->orWhere(function($query) use ($receiverId) {
+        $query->where('sender_id', $receiverId)
+              ->where('receiver_id', Auth::id());
+    })->orderBy('created_at', 'asc')->get();
 
-        })->get();
+    return response()->json($messages);
+}
 
-        return response()->json($messages);
-    }
 }

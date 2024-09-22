@@ -26,9 +26,8 @@
                     <div class="col-md-8 col-lg-6 col-xxl-6">
                         <div class="card mb-0">
                             <div class="card-body">
-                                <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                                    <h3><i class="fa-solid fa-stethoscope text-danger"
-                                            style="font-size: 50px;"></i><b>R</b>apid <b>R</b>escue</h3>
+                                <a href="/" class="text-nowrap logo-img text-center d-block py-3 w-100">
+                                    <img src="{{asset('userpannel/logo.png')}}" alt="" class="img-fluid w-50"> 
                                 </a>
                                 <p class="text-center">RAPID Ambulance Service is a 24/7 Ambulance Unit working 365 days
                                     a year! We can be deployed any time. All our units are composed of well trained

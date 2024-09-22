@@ -14,7 +14,7 @@
                     </div>
                     <div class="input-group">
                         <input type="text" id="message-input" class="form-control" placeholder="Type a message..." />
-                        <button id="send-button" class="btn btn-primary">Send</button>
+                        <button id="send-button" class="btn btn-danger">Send</button>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
           .then(data => {
               const date = new Date(data.created_at);
               const formattedTime = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-              document.getElementById('chat-box').innerHTML += `<div class="message sent">${data.message}<br><small>${formattedTime}</small></div>`;
+              document.getElementById('chat-box').innerHTML += `<div class="message sent">${data.message}</div>`;
               messageInput.value = '';
           });
     });
@@ -67,7 +67,6 @@
 
     setInterval(fetchMessages, 1000);
 </script>
-
 <style>
     .chat-box {
         background-color: #f9f9f9;
@@ -81,22 +80,28 @@
         margin-bottom: 10px;
         position: relative;
         word-wrap: break-word;
-        max-width: 30%; /* Maximum width for the message balloons */
+        max-width: 30%;
+        /* Maximum width for the message balloons */
     }
 
     .sent {
-        background-color: red; /* Light green for sent messages */
+        background-color: rgba(166, 133, 127, 0.589);
         align-self: flex-end;
         margin-left: auto;
         font-weight: bold;
-        color: white;
-        text-align: left; /* Align text to the right */
+        color: black;
+        text-align: left;
+        /* Align text to the left */
     }
 
     .received {
-        background-color: #fff; /* White for received messages */
+        background-color: rgba(166, 133, 127, 0.189);
+        /* White for received messages */
         align-self: flex-start;
-        text-align: left; /* Align text to the left */
+        text-align: left;
+        font-weight: bold;
+        color: black;
+        /* Align text to the left */
     }
 
     .input-group {
@@ -110,13 +115,15 @@
     .input-group .btn {
         border-radius: 0 20px 20px 0;
     }
-    #sendtime{
+
+    #sendtime {
         justify-content: left;
     }
 
     small {
         display: block;
-        color: #ff0; /* Light gray for timestamps */
+        color: gray;
+        /* Light gray for timestamps */
         font-size: 0.8em;
     }
 </style>

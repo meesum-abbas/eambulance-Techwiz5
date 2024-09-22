@@ -1,9 +1,8 @@
 <aside class="left-sidebar">
     <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-            <a href="/" class="text-nowrap logo-img">
-                <h3><i class="fa-solid fa-stethoscope text-danger" style="font-size: 50px;"></i><b>R</b>apid <b>R</b>escue
-                </h3>
+            <a class="text-nowrap logo-img">
+                <img src="{{asset('userpannel/logo.png')}}" alt="" class="img-fluid"> 
             </a>
             <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                 <i class="ti ti-x fs-8"></i>
@@ -37,6 +36,14 @@
                             <iconify-icon icon="twemoji:ambulance" class="fs-6"></iconify-icon>
                         </span>
                         <span class="hide-menu">Check Booking</span>
+                    </a>
+                </li> 
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('driver.chat', ['id' => 1]) }}"  aria-expanded="false">
+                        <span>
+                            <iconify-icon icon="line-md:chat-round-dots-twotone"></iconify-icon>
+                        </span>
+                        <span class="hide-menu">Chat With Admin</span>
                     </a>
                 </li> 
             </ul>

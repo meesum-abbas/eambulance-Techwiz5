@@ -77,7 +77,7 @@ class AuthController extends Controller
             case 2:
                 return '/driver/dashboard';
             case 3:
-                return '/user/dashboard';
+                return '/';
             default:
                 return '/login';
         }

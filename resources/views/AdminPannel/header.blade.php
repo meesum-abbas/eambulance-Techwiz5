@@ -1,9 +1,8 @@
 <aside class="left-sidebar">
     <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-            <a href="./index.html" class="text-nowrap logo-img">
-                <h3><i class="fa-solid fa-stethoscope text-danger" style="font-size: 50px;"></i><b>R</b>apid <b>R</b>escue
-                </h3>
+            <a class="text-nowrap logo-img">
+                <img src="{{asset('userpannel/logo.png')}}" alt="" class="img-fluid"> 
             </a>
             <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                 <i class="ti ti-x fs-8"></i>
@@ -61,6 +60,22 @@
                             <iconify-icon icon="mdi:truck" class="fs-6"></iconify-icon>
                         </span>
                         <span class="hide-menu">Dispatch Control</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('contacts') }}" aria-expanded="false">
+                        <span>
+                            <iconify-icon icon="twemoji:telephone" class="fs-6"></iconify-icon>
+                        </span>
+                        <span class="hide-menu">Contact Detials</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('feedback') }}" aria-expanded="false">
+                        <span>
+                            <iconify-icon icon="twemoji:telephone" class="fs-6"></iconify-icon>
+                        </span>
+                        <span class="hide-menu">Feedback Detials</span>
                     </a>
                 </li>
             </ul>
